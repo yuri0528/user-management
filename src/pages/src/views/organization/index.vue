@@ -96,7 +96,7 @@
           <div class="table-actions" v-if="noSearchOrSearchDepartment">
             <!-- 本地用户目录 -->
             <template v-if="currentCategoryType === 'local'">
-              <div class="table-actions-left-container local-type">
+              <div class="table-actions-left-container local-type" data-test-id="list_operationUser">
                 <!-- 添加成员 -->
                 <bk-dropdown-menu ref="dropdownAdd" class="king-dropdown-menu"
                                   :disabled="basicLoading" @show="isDropdownShowAdd = true"
@@ -685,7 +685,6 @@ export default {
         this.getTableData();
       }
     },
-
     // 搜索结果： 1.展开tree 找到对应的node 加载用户信息列表
     async handleSearchTree(searchResult) {
       // 消除之前空组织对搜索结果的影响
